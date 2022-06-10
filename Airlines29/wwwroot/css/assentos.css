@@ -1,0 +1,177 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    outline: none;
+}
+
+#btnSummitPoltrona{
+    padding: 8px;
+    border-radius: 3px;
+    color: white;
+    background-color: green;
+    margin-top: 5px;
+
+}
+#divBotao{
+    display: flex;
+    width: 100%;
+    height: auto;
+    
+    justify-content: center;
+}
+#titulo{
+    display: flex;
+    
+    justify-content: center;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fff;
+    background-color: #f1f1f1;
+    font-family: -apple-system, Roboto, Arial, 'Open Sans', sans-serif;
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+main > * {
+    display: flex;
+    width: 100%;
+}
+
+header {
+    z-index: 1100;
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid #c8ced3;
+    justify-content: space-between;
+    padding: 12px;
+}
+
+footer {
+    flex: 0 0 50px;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 1rem;
+    color: #23282c;
+    background: #f0f3f5;
+    border-top: 1px solid #c8ced3;
+}
+
+.app-body {
+    flex-grow: 1;
+}
+
+.app-body .container {
+    display: flex;
+    flex: 1;
+    padding: 12px;
+    justify-content: center;
+}
+
+.wrapper {
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.wrapper > h1 {
+    font-weight: normal;
+    color: #2b5b3a;
+    margin-bottom: 12px;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.poltronas,
+.poltronas aside {
+    padding: 12px;
+    display: flex;
+}
+
+.poltronas {
+    padding-top: 150px;
+    border-radius: 45% 45% 0 0;
+    border: thin solid #a8a8a8;
+    background-color: #fafafa;
+}
+
+.poltronas aside {
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.poltronas aside + aside {
+    margin-left: 66px;
+}
+
+.poltronas aside div {
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.poltronas input[type='checkbox']{
+    /* display:none; */
+}
+
+.poltronas label {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+    border: thin solid #aaa;
+    background-color: #35582f;
+    font-size: 20px;
+    position: relative;
+    cursor:pointer;
+    transition: all .5s ease;
+    opacity: 1;
+}
+
+/* .poltronas label:after{
+    content:attr(data-index);
+    height:48px;
+    width:48px;
+    padding: 12px 0;
+    position:absolute;
+    top:0;
+    left:5px;
+    z-index: 0;
+    background-color: #d3cbba;
+    border-radius:0 0 6px 6px;
+} */
+
+.poltronas input[type='checkbox']:checked + label{
+    opacity:.3;
+    
+}
+
+.disablePoltrona{
+    background-color: #e00303 !important;
+    opacity:.5 !important;
+    pointer-events:none;
+}
+
+.disableField {
+    
+    opacity: .5 !important;
+    pointer-events: none;
+}

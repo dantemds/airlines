@@ -1,0 +1,107 @@
+@model Assentos
+@{
+    ViewData["Title"] = "Assentos";
+}
+
+
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="/css/assentos.css">
+    
+</head>
+<body onload="validaBotao()">
+    <main>
+       
+        <div class="app-body">
+            <div class="container">
+                <div class="wrapper">
+                    <div id="titulo">
+                        <h1>Poltronas</h1>
+                    </div>
+
+
+
+
+                    <section class="poltronas">
+
+                        <aside id="fileiraEsquerda">
+
+                            @for ( int i=0; i< Model.AssentosExistentesA.Count(); i++)
+                            {
+
+
+
+                                @if (Model.AssentosComprados.Contains(Model.AssentosExistentesA[i]))
+                                {
+                            <div>
+                                <input name="@Model.AssentosExistentesA[i].ToString()"  type='checkbox' class="poltrona disablePoltrona">
+                                <label class="disablePoltrona" for="checkPoltrona">@Model.AssentosExistentesA[i].ToString()</label>
+                            </div>
+                                        }
+                                        else {
+
+                        <div>
+                            <input name="@Model.AssentosExistentesA[i].ToString()"  onclick="selecionarPoltronas(this.name)" type='checkbox' class="poltrona ">
+                            <label >@Model.AssentosExistentesA[i].ToString()</label>
+                        </div>
+
+                                        }
+
+
+                                   
+                                }
+
+                            </aside>
+                        <aside id="fileiraDireita">
+
+                            @for (int i = 0; i < Model.AssentosExistentesB.Count(); i++)
+                            {
+
+
+
+                                @if (Model.AssentosComprados.Contains(Model.AssentosExistentesB[i]))
+                                {
+                                    <div>
+                                        <input name="@Model.AssentosExistentesB[i].ToString()"  type='checkbox' class="poltrona disablePoltrona">
+                                        <label class="disablePoltrona" for="checkPoltrona">@Model.AssentosExistentesB[i].ToString()</label>
+                                    </div>
+                                }
+                                else
+                                {
+
+                                    <div>
+                                        <input name="@Model.AssentosExistentesB[i].ToString()"  onclick="selecionarPoltronas(this.name)" type="checkbox" class="poltrona ">
+                                        <label>@Model.AssentosExistentesB[i].ToString()</label>
+                                    </div>
+
+                                }
+
+
+
+                            }
+                        </aside>
+
+
+                    </section>
+                    <div id="divBotao">
+                        
+                        <input id="btnComprar"  onclick="comprarPoltronas(@Model.Id)"  value="Comprar" type="button" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+       
+
+    </main>
+
+
+
+</body>
+
+
+
+</html>
